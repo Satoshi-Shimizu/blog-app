@@ -3,8 +3,10 @@
     <% @posts.each do |post| %>
     <div class="card">
       <div class="card-content red-text">
-          <p><%= post.id %></p>
           <p><%= post.text %></p>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <%= link_to "delete", "/posts/#{post.id}", method: :delete %>
+          <% end %>
       </div>
       <div class="card-action">
       </div>
