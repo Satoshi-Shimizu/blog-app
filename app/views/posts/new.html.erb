@@ -1,0 +1,11 @@
+<div class="row" style="padding-top: 50px;">
+  <div class="col s12 m6 offset-m3">
+  <h2>New Post</h2>
+
+    <%= form_with model: Post.new, local: true do |f| %>
+        <%= f.text_field :text %>
+        <%= f.submit "Post" %>
+    <% end %>
+
+  </div>
+</div>
