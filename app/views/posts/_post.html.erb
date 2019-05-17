@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-content red-text">
+      <p><%= p.text %></p>
+      <% if user_signed_in? && current_user.id == p.user_id %>
+        <%= link_to "edit", "/posts/#{p.id}/edit", method: :get %>
+        <%= link_to "delete", "/posts/#{p.id}", method: :delete %>
+      <% end %>
+  </div>
+  <div class="card-action">
+  </div>
+</div>
