@@ -1,0 +1,11 @@
+<div class="row" style="padding-top: 50px;">
+  <div class="col s12 m6 offset-m3">
+  <h2>Edit Post</h2>
+
+    <%= form_with method: :patch, model: Post.new, url: "/posts/#{@post.id}", local: true do |f| %>
+        <%= f.text_field :text ,value: @post.text %>
+        <%= f.submit "Update" %>
+    <% end %>
+
+  </div>
+</div>

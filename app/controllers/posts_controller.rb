@@ -16,10 +16,18 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    if post.user_id == current_user.id
-      post.destroy
-      redirect_to action: :index
-    end
+    post.destroy if post.user_id == current_user.id
+    redirect_to action: :index
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    post = Post.find(params[:id])
+    post.update(params_permit) if post.user_id == current_user.id
+    redirect_to action: :index
   end
 
   private

@@ -5,6 +5,7 @@
       <div class="card-content red-text">
           <p><%= post.text %></p>
           <% if user_signed_in? && current_user.id == post.user_id %>
+            <%= link_to "edit", "/posts/#{post.id}/edit", method: :get %>
             <%= link_to "delete", "/posts/#{post.id}", method: :delete %>
           <% end %>
       </div>
