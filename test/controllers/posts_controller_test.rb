@@ -6,6 +6,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   # end
 
   def index
-    
+    @posts = "1111"
+    binding.pry
   end
 end
