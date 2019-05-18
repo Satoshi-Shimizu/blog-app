@@ -1,0 +1,26 @@
+body {
+  color: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.card {
+  background-color: #8f8d8a;
+  height:auto;
+  position:relative;
+}
+
+.card-content {
+  margin:10px;
+  font-size:24px;
+}
+
+.title{
+  font-size:28px;
+}
+.pagination{
+  display: block;
+}
+.btn-small {
+  margin-left:10px;
+}

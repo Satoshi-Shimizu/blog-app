@@ -1,11 +1,18 @@
-<div class="card">
-  <div class="card-content red-text">
-      <p><%= p.text %></p>
-      <% if user_signed_in? && current_user.id == p.user_id %>
-        <%= link_to "edit", "/posts/#{p.id}/edit", method: :get %>
-        <%= link_to "delete", "/posts/#{p.id}", method: :delete %>
-      <% end %>
-  </div>
-  <div class="card-action">
-  </div>
-</div>
+
+    <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p><%= p.text %></p>
+        </div>
+        <div class="card-action">
+          <% if user_signed_in? && current_user.id == p.user_id %>
+            <%= link_to "/posts/#{p.id}/edit", method: :get, class: "waves-effect waves-light btn-small" do %>
+              EDIT<i class="material-icons right">brush</i>
+            <% end %>
+            <%= link_to "/posts/#{p.id}", method: :delete, class: "waves-effect waves-light btn-small" do %>
+              DELETE<i class="material-icons right">clear</i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>

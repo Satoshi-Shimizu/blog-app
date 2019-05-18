@@ -1,12 +1,19 @@
-<div class="row">
-  <div class="col s12 m6 offset-m3">
+  <section class="conteiner">
     <% @posts.each do |post| %>
-    <%= render partial: "post", locals: { p: post } %>
+      <div class="row">
+        <div class="col-md-1 col-md-offset-1">
+        </div>
+        <div class="col-md-10 col-md-offset-1">
+          <%= render partial: "post", locals: { p: post } %>
+        </div>
+        <div class="col-md-1 col-md-offset-1">
+        </div>
+      </div>
     <% end %>
-  </div>
-</div>
-<div class="container center">
-  <div class="text-center">
-    <%= paginate(@posts) %>
-  </div>
-</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-md-offset-1">
+        <%= paginate(@posts) %>
+        </div>
+    </div>
+  </section>
